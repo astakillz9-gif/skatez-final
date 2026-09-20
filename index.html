@@ -49,9 +49,13 @@ canvas{display:block}#gameCanvas{width:100vw;height:100vh}
 <h2 style="color:gold">🎁 REDEEM</h2>
 <input id="codeInput" placeholder="Enter Code">
 <button class="btn" style="background:gold;color:#000;width:100%" onclick="doRedeem()">REDEEM</button>
-<button class="btn" style="background:#333;width:100%" onclick="closeRedeem()">CLOSE</button>
+<button class="btn" style="background:#333;width:100%" onclick
+  ="closeRedeem()">CLOSE</button>
 <p id="redeemMsg" style="color:#fff;font-size:11px;margin-top:6px"></p>
 </div>
+  <link rel="manifest" href="/manifest.json">
+<meta name="screen-orientation" content="landscape">
+<meta name="orientation" content="landscape">
 <script>
 // --- GAME CORE ---
 let scene,camera,renderer,skater,ground,keys={},stars=parseInt(localStorage.getItem('stars')||'0'),cash=4250,xp=3180,lvl=12,game=false,redeemed=JSON.parse(localStorage.getItem('redeemed')||'{}');
@@ -61,3 +65,17 @@ document.getElementById('stars').innerText=stars;
 function init(){
 scene=new THREE.Scene();scene.background=new THREE.Color(0x87CEEB);scene.fog=new THREE.Fog(0x87CEEB,60,180);
 camera=new THREE.PerspectiveCamera(65,innerWidth/innerHeight,0.1,1000
+{
+  "name": "Skatez Finals - Open World NYC",
+  "short_name": "SKATEZ FINALS",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#000000",
+  "theme_color": "#00f2ff",
+  "start_url": "/",
+  "icons": [{
+    "src": "icon-512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+    }
